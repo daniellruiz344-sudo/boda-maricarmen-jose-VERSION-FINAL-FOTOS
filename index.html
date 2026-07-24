@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script>document.documentElement.classList.add("js");</script>
+    
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Invitación de boda de Maricarmen y José Armando — 26 de diciembre de 2026"
+    >
+
+    <meta name="theme-color" content="#314033">
+    <meta property="og:title" content="Maricarmen & José Armando | Nuestra Boda">
+    <meta property="og:description" content="Acompáñanos a celebrar nuestra boda el 26 de diciembre de 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/portada.png">
+
+    <title>Maricarmen & José Armando | Nuestra Boda</title>
+
+    <link rel="preload" href="assets/images/portada.webp" as="image" type="image/webp">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/petals.css">
+    <link rel="stylesheet" href="css/countdown.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/premium.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVEGACIÓN DE LAS 6 HOJAS
+    =========================================== -->
+
+    <nav
+        class="navegacion-hojas"
+        aria-label="Navegación de la invitación"
+    >
+
+        <button
+            class="punto-navegacion activo"
+            type="button"
+            data-destino="portada"
+            aria-label="Ir a la hoja 1"
+        ></button>
+
+        <button
+            class="punto-navegacion"
+            type="button"
+            data-destino="invitacion"
+            aria-label="Ir a la hoja 2"
+        ></button>
+
+        <button
+            class="punto-navegacion"
+            type="button"
+            data-destino="hoja-3"
+            aria-label="Ir a la hoja 3"
+        ></button>
+
+        <button
+            class="punto-navegacion"
+            type="button"
+            data-destino="hoja-4"
+            aria-label="Ir a la hoja 4"
+        ></button>
+
+        <button
+            class="punto-navegacion"
+            type="button"
+            data-destino="hoja-5"
+            aria-label="Ir a la hoja 5"
+        ></button>
+
+        <button
+            class="punto-navegacion"
+            type="button"
+            data-destino="hoja-6"
+            aria-label="Ir a la hoja 6"
+        ></button>
+
+    </nav>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <main>
+
+        <!-- ======================================
+             HOJA 1 — PORTADA
+        ======================================= -->
+
+        <section
+            class="portada"
+            id="portada"
+            data-hoja="1"
+        >
+
+            <div class="portada-overlay"></div>
+
+            <div
+                class="destellos"
+                id="destellos"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="petalos"
+                id="petalos"
+                aria-hidden="true"
+            ></div>
+
+            <div class="portada-contenido">
+
+                <p class="portada-subtitulo animacion-entrada">
+                    ¡Nos Casamos!
+                </p>
+
+                <h1
+                    class="portada-nombres animacion-entrada retraso-1"
+                >
+                    Maricarmen
+
+                    <span class="portada-y">&</span>
+
+                    José Armando
+                </h1>
+
+                <p
+                    class="portada-fecha animacion-entrada retraso-2"
+                >
+                    26 de diciembre de 2026
+                </p>
+
+                <button
+                    class="boton-principal animacion-entrada retraso-3"
+                    id="botonAbrir"
+                    type="button"
+                >
+                    Abrir invitación
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ======================================
+             HOJA 2 — BIENVENIDA
+        ======================================= -->
+
+        <section
+            class="hoja hoja-2"
+            id="invitacion"
+            data-hoja="2"
+        >
+
+            <div class="hoja-overlay"></div>
+
+            <div class="hoja-contenido">
+
+                <!-- Fotografía pendiente -->
+
+                <p class="hoja-etiqueta">
+                    Nuestra historia continúa
+                </p>
+
+                <h2 class="hoja-titulo">
+                    Bienvenidos a nuestra boda
+                </h2>
+
+                <p class="hoja-texto">
+                    Hay momentos en la vida que son especiales por sí solos,
+                    pero compartirlos con las personas que queremos los
+                    convierte en recuerdos inolvidables.
+                </p>
+
+                <p class="hoja-frase">
+                    Con mucha alegría queremos que formen parte de este día
+                    tan especial.
+                </p>
+
+                <button
+                    class="flecha-scroll"
+                    type="button"
+                    data-destino="hoja-3"
+                    aria-label="Continuar a la hoja 3">
+                    <span>↓</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             HOJA 3 - NUESTRA BODA
+        ========================================== -->
+
+<section id="hoja-3" class="hoja hoja-3">
+
+    <div class="contenido-hoja historia-contenido">
+
+        <span class="adorno historia-adorno">❦</span>
+
+        
+
+        <h2 class="titulo-seccion historia-titulo">
+            Nuestra Boda
+        </h2>
+
+        <p class="frase-historia">
+            “Dios puso amor en nuestros corazones,
+            y hoy damos el paso de unir nuestras vidas.”
+        </p>
+
+        <div class="foto-historia">
+            <div class="marco-historia">
+                <picture>
+                    <source srcset="assets/images/historia.webp" type="image/webp">
+                    <img
+                        src="assets/images/historia.jpg"
+                        alt="Maricarmen y José Armando junto a una camioneta amarilla"
+                        loading="lazy"
+                        decoding="async">
+                </picture>
+            </div>
+        </div>
+
+        <p class="frase-final historia-nombres">
+            Maricarmen
+            <span>&amp;</span>
+            José Armando
+        </p>
+
+        <p class="historia-fecha">
+            26 de diciembre de 2026
+        </p>
+
+        <button
+            class="flecha-scroll"
+            type="button"
+            data-destino="hoja-4"
+            aria-label="Continuar a la hoja 4">
+
+            <span>↓</span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+        <!-- =========================================
+     HOJA 4 - PADRES Y PADRINOS
+========================================== -->
+
+<section id="hoja-4" class="hoja hoja-4">
+
+    <div class="hoja-overlay"></div>
+
+    <div class="hoja-contenido hoja-contenido-4">
+
+        
+
+        <h2 class="hoja-titulo hoja-4-titulo">
+            Con la bendición de Dios
+            <span>y de nuestros padres</span>
+        </h2>
+
+        <p class="hoja-4-intro">
+            Tenemos el honor de invitarte
+            a celebrar nuestra unión.
+        </p>
+
+        <div class="familias">
+
+            <div class="familia-bloque">
+                <h3>Padres de la Novia</h3>
+
+                <p>Rafael Aboytes Paredes</p>
+                <span>&amp;</span>
+                <p>Mónica Paredes López</p>
+            </div>
+
+            <div class="familia-separador" aria-hidden="true"></div>
+
+            <div class="familia-bloque">
+                <h3>Padres del Novio</h3>
+
+                <p>Armando Arvizu Ortega</p>
+                <span>&amp;</span>
+                <p>María Teresa Jiménez Almanza</p>
+            </div>
+
+        </div>
+
+        <div class="padrinos-bloque">
+
+            <span class="padrinos-adorno">✦</span>
+
+            <h3>
+                Con la compañía de nuestros padrinos
+            </h3>
+
+            <p>
+                Myriam Vásquez de Arvizu
+                <span>&amp;</span>
+                Liborio Arvizu
+            </p>
+
+        </div>
+
+        <button
+            class="flecha-scroll"
+            type="button"
+            data-destino="hoja-5"
+            aria-label="Continuar a la hoja 5">
+
+            <span>↓</span>
+
+        </button>
+
+</div>
+
+</section>
+
+    <!-- =========================================
+     HOJA 5 - CEREMONIA Y RECEPCIÓN
+========================================== -->
+
+<section id="hoja-5" class="hoja hoja-5">
+
+    <div class="hoja-contenido-5">
+
+        <header class="hoja-5-encabezado">
+
+            <p class="hoja-5-etiqueta">
+                El gran día
+            </p>
+
+            <h2 class="hoja-5-titulo">
+                Ceremonia
+                <span>&amp;</span>
+                Recepción
+            </h2>
+
+            <p class="hoja-5-intro">
+                Acompáñanos a celebrar el comienzo
+                de nuestra vida juntos.
+            </p>
+
+        </header>
+
+        <div class="eventos-boda">
+
+            <article class="evento-tarjeta">
+
+                <div class="evento-icono" aria-hidden="true">
+                    ✦
+                </div>
+
+                <p class="evento-etiqueta">
+                    Ceremonia
+                </p>
+
+                <h3>
+                    Parroquia San Miguel
+                </h3>
+
+                <p class="evento-fecha">
+                    26 de diciembre de 2026
+                </p>
+
+                <p class="evento-hora">
+                    3:30 p.m.
+                </p>
+
+                <a
+                class="boton-ubicacion"
+                href="https://maps.app.goo.gl/TApyLXPGuF9QNkBJ9"
+                target="_blank"
+                rel="noopener noreferrer">
+                Ver ubicación
+            </a>
+
+            </article>
+
+            <div
+                class="eventos-separador"
+                aria-hidden="true">
+            </div>
+
+            <article class="evento-tarjeta">
+
+                <div class="evento-icono" aria-hidden="true">
+                    ✦
+                </div>
+
+                <p class="evento-etiqueta">
+                    Recepción
+                </p>
+
+                <h3>
+                    Salón de Beto Aboytes
+                </h3>
+
+                <p class="evento-fecha">
+                    26 de diciembre de 2026
+                </p>
+
+                <p class="evento-hora">
+                    4:30 p.m.
+                </p>
+
+                <a
+                    class="boton-ubicacion"
+                    href="https://maps.app.goo.gl/D6Kn14RGwnbtrB1g9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Cómo llegar a la recepción">
+
+                    Cómo llegar
+
+                </a>
+
+            </article>
+
+        </div>
+
+        <button
+            class="flecha-scroll"
+            type="button"
+            data-destino="hoja-6"
+            aria-label="Continuar a la hoja 6">
+
+            <span>↓</span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+        <!-- ======================================
+             HOJA 6 — AGRADECIMIENTO
+        ======================================= -->
+
+        <section
+            class="hoja hoja-6"
+            id="hoja-6"
+            data-hoja="6"
+        >
+
+            <div class="hoja-overlay"></div>
+
+            <div class="hoja-contenido hoja-contenido-6">
+
+                <div class="foto-final">
+                    <div class="marco-final">
+                        <picture>
+                            <source srcset="assets/images/final.webp" type="image/webp">
+                            <img
+                                src="assets/images/final.jpg"
+                                alt="Maricarmen y José Armando al atardecer"
+                                loading="lazy"
+                                decoding="async">
+                        </picture>
+                    </div>
+                </div>
+
+                <p class="hoja-etiqueta">
+                    Gracias por acompañarnos
+                </p>
+
+                <h2 class="hoja-titulo">
+                    Los esperamos con mucho cariño
+                </h2>
+
+                <p class="hoja-texto">
+                    Será un honor compartir con ustedes el comienzo de esta
+                    nueva etapa de nuestras vidas.
+                </p>
+                <div class="countdown-panel">
+                    <div class="confirmacion-asistencia">
+
+    <p>
+        Nos dará mucha alegría contar con tu presencia.
+    </p>
+
+    <div class="opciones-rsvp" aria-label="Confirmación de asistencia">
+        <a
+            class="boton-whatsapp boton-rsvp boton-rsvp-si"
+            href="https://wa.me/524661134929?text=Hola%20Maricarmen%20y%20Jos%C3%A9%20Armando.%20%F0%9F%92%8D%0A%0ACon%20mucho%20gusto%20confirmo%20mi%20asistencia%20a%20su%20boda.%0A%0ANombre%3A%20__________________%0AN%C3%BAmero%20de%20personas%3A%20_____%0A%0ANos%20vemos%20el%2026%20de%20diciembre.%20%C2%A1Muchas%20felicidades!%20%F0%9F%8E%89"
+            target="_blank"
+            rel="noopener noreferrer">
+            Sí, asistiré
+        </a>
+
+        <a
+            class="boton-whatsapp boton-rsvp boton-rsvp-no"
+            href="https://wa.me/524661134929?text=Hola%20Maricarmen%20y%20Jos%C3%A9%20Armando.%20%F0%9F%92%90%0A%0ALamentablemente%20no%20podr%C3%A9%20acompa%C3%B1arlos%20en%20su%20boda.%0A%0ANombre%3A%20__________________%0A%0ALes%20deseo%20un%20d%C3%ADa%20maravilloso%20y%20una%20vida%20llena%20de%20amor.%20%C2%A1Muchas%20felicidades!"
+            target="_blank"
+            rel="noopener noreferrer">
+            No podré asistir
+        </a>
+    </div>
+
+</div>
+
+<div class="calendario-boda">
+    <p class="calendario-titulo">Guarda la fecha</p>
+    <p class="calendario-texto">Añade la boda a tu calendario para no olvidar este día especial.</p>
+
+    <div class="opciones-calendario">
+        <a
+            class="boton-calendario"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20de%20Maricarmen%20y%20Jos%C3%A9%20Armando&dates=20261226T213000Z%2F20261227T053000Z&details=Acomp%C3%A1%C3%B1anos%20a%20celebrar%20nuestra%20boda.%20Ceremonia%20a%20las%203%3A30%20p.m.%20y%20recepci%C3%B3n%20a%20las%204%3A30%20p.m.&location=Parroquia%20San%20Miguel"
+            target="_blank"
+            rel="noopener noreferrer">
+            Google Calendar
+        </a>
+
+        <a
+            class="boton-calendario"
+            href="assets/calendario/boda-maricarmen-jose.ics"
+            download="Boda-Maricarmen-y-Jose-Armando.ics">
+            Apple / iPhone
+        </a>
+
+        <a
+            class="boton-calendario"
+            href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Boda%20de%20Maricarmen%20y%20Jos%C3%A9%20Armando&startdt=2026-12-26T15%3A30%3A00-06%3A00&enddt=2026-12-26T23%3A30%3A00-06%3A00&body=Acomp%C3%A1%C3%B1anos%20a%20celebrar%20nuestra%20boda.%20Ceremonia%20a%20las%203%3A30%20p.m.%20y%20recepci%C3%B3n%20a%20las%204%3A30%20p.m.&location=Parroquia%20San%20Miguel"
+            target="_blank"
+            rel="noopener noreferrer">
+            Outlook
+        </a>
+    </div>
+</div>
+
+    <h3>Faltan solamente</h3>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="dias">00</span>
+            <small>Días</small>
+        </div>
+
+        <div class="time-box">
+            <span id="horas">00</span>
+            <small>Horas</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutos">00</span>
+            <small>Minutos</small>
+        </div>
+
+        <div class="time-box">
+            <span id="segundos">00</span>
+            <small>Segundos</small>
+        </div>
+
+    </div>
+
+</div>
+
+                <div class="hoja-6-cierre">
+
+    <p class="despedida-frase despedida-final">
+        ¡Gracias por compartir este momento tan especial con nosotros!
+    </p>
+
+    <p class="despedida-secundaria">
+        Lo mejor está por comenzar.
+    </p>
+
+    <p class="despedida-nombres">
+        Maricarmen
+        <span>&amp;</span>
+        José Armando
+    </p>
+
+    <p class="despedida-fecha">
+        26 de diciembre de 2026
+    </p>
+
+    <button
+        class="boton-inicio"
+        type="button"
+        data-destino="portada">
+
+        Volver al inicio
+
+    </button>
+
+</div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Música de fondo -->
+<audio id="musicaFondo" loop preload="auto">
+    <source src="assets/audio/piano.mp3" type="audio/mpeg">
+</audio>
+
+<button id="btnMusica" class="boton-musica" type="button" aria-label="Pausar música" aria-pressed="false">
+    <span class="icono-musica" aria-hidden="true">♫</span>
+    <span class="texto-musica">Música</span>
+</button>
+
+</body>
+
+</html>

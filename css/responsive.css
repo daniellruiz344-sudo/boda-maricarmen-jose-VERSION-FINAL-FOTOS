@@ -1,0 +1,90 @@
+@media (max-width: 900px) {
+    .overlay h1 {
+        font-size: 3.2rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    #inicio {
+        padding: 16px;
+    }
+
+    .overlay {
+        padding: 20px 16px;
+    }
+
+    .overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .overlay h1 {
+        font-size: 2.4rem;
+    }
+
+    .overlay p {
+        font-size: 1.1rem;
+        margin-bottom: 24px;
+    }
+
+    #abrir {
+        padding: 14px 34px;
+        font-size: 1rem;
+    }
+
+    .invitacion {
+        padding: 16px 16px 48px;
+        margin-top: -20px;
+    }
+
+    .card {
+        padding: 24px 20px;
+    }
+
+    .time-box {
+        min-width: 84px;
+        padding: 12px 10px;
+    }
+
+    .time-box span {
+        font-size: 1.6rem;
+    }
+}
+/* CORRECCIÓN DEFINITIVA DE BOTONES DE UBICACIÓN */
+
+a.boton-ubicacion,
+a.boton-ubicacion:link,
+a.boton-ubicacion:visited {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 18px;
+    padding: 12px 26px;
+
+    color: #7a5b2e !important;
+    background-color: transparent !important;
+
+    border: 1px solid #caa24d !important;
+    border-radius: 30px;
+
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a.boton-ubicacion:hover,
+a.boton-ubicacion:focus {
+    color: #ffffff !important;
+    background-color: #caa24d !important;
+    text-decoration: none !important;
+
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(122, 91, 46, 0.18);
+}

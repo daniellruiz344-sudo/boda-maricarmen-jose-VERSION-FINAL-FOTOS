@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Maricarmen y Jose Armando//Invitacion de boda//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boda-maricarmen-jose-armando-20261226@example.com
+DTSTAMP:20260724T120000Z
+DTSTART:20261226T213000Z
+DTEND:20261227T053000Z
+SUMMARY:Boda de Maricarmen y José Armando
+DESCRIPTION:Acompáñanos a celebrar nuestra boda. Ceremonia a las 3:30 p.m. y recepción a las 4:30 p.m.
+LOCATION:Parroquia San Miguel
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:La boda de Maricarmen y José Armando es en una semana
+END:VALARM
+END:VEVENT
+END:VCALENDAR

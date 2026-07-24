@@ -1,0 +1,252 @@
+ /* ==================================================
+   ANIMACIONES GENERALES
+   Invitación Maricarmen & José Armando
+================================================== */
+
+/* Entrada suave del contenido */
+.animacion-entrada {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: aparecerDesdeAbajo 1.3s ease forwards;
+}
+
+/* Retrasos para mostrar cada elemento uno por uno */
+.retraso-1 {
+    animation-delay: 0.7s;
+}
+
+.retraso-2 {
+    animation-delay: 1.3s;
+}
+
+.retraso-3 {
+    animation-delay: 1.9s;
+}
+
+.retraso-4 {
+    animation-delay: 2.5s;
+}
+
+.retraso-5 {
+    animation-delay: 3.1s;
+}
+
+/* Aparición principal */
+@keyframes aparecerDesdeAbajo {
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Aparición suave de toda la portada */
+.portada {
+    animation: aparecerPortada 1.8s ease-out both;
+}
+
+@keyframes aparecerPortada {
+    0% {
+        opacity: 0;
+        background-color: #000;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Zoom lento de la fotografía */
+.portada::before {
+    animation: zoomCinematografico 18s ease-in-out infinite alternate;
+}
+
+@keyframes zoomCinematografico {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+/* Movimiento suave del símbolo & */
+.portada-y {
+    display: inline-block;
+    animation: flotarSimbolo 3.5s ease-in-out infinite;
+}
+
+@keyframes flotarSimbolo {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-7px) scale(1.05);
+    }
+}
+
+/* Brillo elegante del botón */
+.portada-boton {
+    position: relative;
+    overflow: hidden;
+    animation:
+        aparecerDesdeAbajo 1.3s ease forwards,
+        respiracionBoton 3s ease-in-out 4s infinite;
+}
+
+.portada-boton::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -120%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+    );
+    transform: rotate(25deg);
+    animation: brilloBoton 4.5s ease-in-out 4s infinite;
+}
+
+@keyframes brilloBoton {
+    0% {
+        left: -120%;
+    }
+
+    35%,
+    100% {
+        left: 160%;
+    }
+}
+
+@keyframes respiracionBoton {
+    0%,
+    100% {
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.25),
+            0 0 0 rgba(212, 175, 55, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 12px 32px rgba(0, 0, 0, 0.3),
+            0 0 22px rgba(212, 175, 55, 0.4);
+    }
+}
+
+/* Animación del botón de música */
+.boton-musica {
+    opacity: 0;
+    animation: aparecerMusica 1s ease 3.5s forwards;
+}
+
+@keyframes aparecerMusica {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-30deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.boton-musica.reproduciendo {
+    animation:
+        aparecerMusica 1s ease forwards,
+        pulsoMusica 2s ease-in-out infinite;
+}
+
+@keyframes pulsoMusica {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 9px rgba(212, 175, 55, 0);
+    }
+}
+
+/* Destellos dorados */
+.destello {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #f8e7a2;
+    box-shadow:
+        0 0 5px #f8e7a2,
+        0 0 12px rgba(255, 215, 100, 0.9);
+    opacity: 0;
+    animation: brillarDestello 4s ease-in-out infinite;
+}
+
+@keyframes brillarDestello {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    40% {
+        opacity: 0.9;
+        transform: scale(1.3);
+    }
+
+    65% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+/* Respeta la configuración de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* ==================================================
+   ACABADO PREMIUM: APARICIÓN DE LAS 6 PÁGINAS
+================================================== */
+
+main > section {
+    opacity: 0;
+    transform: translateY(38px) scale(0.99);
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+main > section.pagina-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Respeta la configuración de accesibilidad del usuario */
+@media (prefers-reduced-motion: reduce) {
+    main > section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}   

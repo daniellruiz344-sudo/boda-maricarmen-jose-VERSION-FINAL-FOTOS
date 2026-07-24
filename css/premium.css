@@ -1,0 +1,327 @@
+/* Acabado Premium Studio V3 */
+:root {
+  --premium-ink: #314033;
+  --premium-olive: #6d7c65;
+  --premium-gold: #b9944f;
+  --premium-gold-light: #ead9ad;
+  --premium-ivory: #fffdf7;
+  --premium-shadow: 0 24px 70px rgba(47, 58, 47, .16);
+}
+html { scroll-snap-type: y proximity; }
+body { background: #f3efe6; }
+main > section { scroll-snap-align: start; isolation: isolate; }
+main > section::selection { background: rgba(185,148,79,.25); }
+.portada::after {
+  content: ""; position: absolute; inset: 18px; z-index: 3; pointer-events: none;
+  border: 1px solid rgba(234,217,173,.48); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.portada-overlay {
+  background: linear-gradient(180deg, rgba(12,14,10,.22), rgba(12,13,10,.48) 50%, rgba(12,13,10,.76)),
+              radial-gradient(circle at 50% 35%, transparent 0 22%, rgba(0,0,0,.24) 72%);
+}
+.portada-contenido { text-wrap: balance; }
+.portada-subtitulo { font-family: "Cinzel", serif; font-size: clamp(.78rem, 1.8vw, 1.05rem); letter-spacing: .5em; }
+.portada-nombres { font-size: clamp(3.35rem, 9vw, 7rem); line-height: .88; }
+.portada-nombres::before, .portada-nombres::after {
+  content: ""; width: min(160px, 28vw); height: 1px; margin: 20px auto;
+  background: linear-gradient(90deg, transparent, var(--premium-gold-light), transparent);
+}
+.boton-principal, .boton-ubicacion, .boton-whatsapp, .boton-inicio {
+  font-family: "Cinzel", serif !important; font-weight: 500; letter-spacing: .12em;
+}
+.boton-principal { position: relative; overflow: hidden; }
+.boton-principal::after {
+  content:""; position:absolute; inset:-40% auto -40% -45%; width:35%; transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent); transition:left .65s ease;
+}
+.boton-principal:hover::after { left: 120%; }
+.hoja-contenido, .historia-contenido, .hoja-contenido-4, .hoja-contenido-5, .hoja-contenido-6 {
+  filter: drop-shadow(0 18px 38px rgba(52,64,52,.08));
+}
+.hoja-contenido { border-color: rgba(185,148,79,.35); box-shadow: var(--premium-shadow), inset 0 0 45px rgba(255,255,255,.38); }
+.hoja-titulo, .titulo-seccion, .hoja-5-titulo { text-wrap: balance; }
+.evento-tarjeta, .familia-bloque, .padrinos-bloque, .countdown-panel {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.evento-tarjeta:hover, .familia-bloque:hover, .padrinos-bloque:hover {
+  transform: translateY(-5px); box-shadow: 0 20px 45px rgba(65,75,62,.12); border-color: rgba(185,148,79,.5);
+}
+.boton-ubicacion, .boton-whatsapp, .boton-inicio { transition: transform .3s ease, box-shadow .3s ease, background .3s ease !important; }
+.boton-ubicacion:hover, .boton-whatsapp:hover, .boton-inicio:hover { transform: translateY(-3px); }
+.flecha-scroll { animation: flechaPremium 2.2s ease-in-out infinite; }
+@keyframes flechaPremium { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+.navegacion-hojas { z-index: 60; }
+.punto-navegacion { box-shadow: 0 0 0 1px rgba(255,255,255,.45), 0 2px 10px rgba(0,0,0,.16); }
+.punto-navegacion.activo { transform: scale(1.35); }
+.boton-musica {
+  position: fixed !important; right: 18px !important; bottom: 18px !important; z-index: 80 !important;
+  width: auto !important; min-width: 48px; height: 48px !important; padding: 0 16px !important; gap: 8px;
+  display: inline-flex; align-items: center; justify-content: center; border-radius: 999px !important;
+  color: #fff8df !important; background: rgba(35,42,34,.74) !important; border: 1px solid rgba(234,217,173,.55) !important;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-family:"Cinzel",serif; font-size:.7rem !important; letter-spacing:.08em;
+}
+.boton-musica .icono-musica { font-size: 1.1rem; }
+.boton-musica.reproduciendo .icono-musica { animation: nota 1.6s ease-in-out infinite; }
+@keyframes nota { 50% { transform: translateY(-2px) rotate(7deg); } }
+/* Reveal por sección, sin ocultar contenido si JS no carga */
+.js main > section { opacity: 0; transform: translateY(24px) scale(.995); }
+main > section.pagina-visible { opacity:1 !important; transform:none !important; transition:opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1); }
+/* Efectos ligeros y naturales */
+.petalo { left: var(--x) !important; top: -12vh !important; width: var(--tamano) !important; height: calc(var(--tamano) * 1.35) !important;
+  opacity: var(--opacidad) !important; animation: petaloPremium var(--duracion) linear infinite !important; animation-delay: var(--retraso) !important; }
+@keyframes petaloPremium { to { transform: translate3d(var(--deriva), 125vh, 0) rotate(620deg) rotateY(260deg); } }
+@media (max-width: 600px) {
+  html { scroll-snap-type: none; }
+  .portada::after { inset: 10px; }
+  .portada-contenido { padding-inline: 18px; }
+  .portada-nombres { font-size: clamp(3rem, 15vw, 4.8rem); }
+  .texto-musica { display:none; }
+  .boton-musica { width:46px !important; min-width:46px; height:46px !important; padding:0 !important; }
+  .navegacion-hojas { right: 9px; }
+  .hoja-contenido { padding: 38px 22px; }
+  .evento-tarjeta:hover, .familia-bloque:hover, .padrinos-bloque:hover { transform:none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; scroll-snap-type:none; }
+  *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  main > section { opacity:1 !important; transform:none !important; }
+}
+
+
+/* RSVP y calendario */
+.opciones-rsvp, .opciones-calendario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+.boton-rsvp, .boton-calendario {
+  min-width: 180px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: .72rem;
+  letter-spacing: .09em;
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
+}
+.boton-rsvp-si {
+  background: #66755f !important;
+  border: 1px solid #66755f !important;
+  color: #fff !important;
+}
+.boton-rsvp-no {
+  background: transparent !important;
+  border: 1px solid rgba(103, 91, 76, .52) !important;
+  color: #62574b !important;
+}
+.boton-rsvp:hover, .boton-calendario:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(63, 70, 59, .14);
+}
+.calendario-boda {
+  width: min(680px, 100%);
+  margin: 26px auto 6px;
+  padding: 24px 20px;
+  border: 1px solid rgba(185, 148, 79, .32);
+  border-radius: 18px;
+  background: rgba(255, 252, 245, .62);
+  box-shadow: inset 0 0 28px rgba(255,255,255,.45);
+}
+.calendario-titulo {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  color: #92733c;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .86rem;
+}
+.calendario-texto {
+  margin: 9px auto 0;
+  max-width: 520px;
+  color: #665f55;
+}
+.boton-calendario {
+  min-width: 155px;
+  color: #756035;
+  border: 1px solid rgba(185, 148, 79, .58);
+  background: rgba(255,255,255,.62);
+}
+@media (max-width: 600px) {
+  .opciones-rsvp, .opciones-calendario { flex-direction: column; align-items: stretch; }
+  .boton-rsvp, .boton-calendario { width: 100%; min-width: 0; }
+  .calendario-boda { padding: 22px 16px; }
+}
+
+/* =========================================================
+   EDICIÓN FINAL — refinamiento visual, accesibilidad y móvil
+========================================================= */
+:focus-visible {
+  outline: 3px solid rgba(234, 217, 173, .95);
+  outline-offset: 4px;
+}
+
+.boton-principal,
+.boton-ubicacion,
+.boton-whatsapp,
+.boton-calendario,
+.boton-inicio,
+.flecha-scroll,
+.boton-musica {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.boton-principal:active,
+.boton-ubicacion:active,
+.boton-whatsapp:active,
+.boton-calendario:active,
+.boton-inicio:active {
+  transform: translateY(1px) scale(.985) !important;
+}
+
+.evento-icono,
+.padrinos-adorno {
+  animation: brilloIcono 3.8s ease-in-out infinite;
+}
+
+@keyframes brilloIcono {
+  0%, 100% { opacity: .72; filter: drop-shadow(0 0 0 rgba(185,148,79,0)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 7px rgba(185,148,79,.38)); }
+}
+
+.hoja-6-cierre {
+  position: relative;
+  padding-top: 8px;
+}
+
+.hoja-6-cierre::before {
+  content: "";
+  display: block;
+  width: min(180px, 42vw);
+  height: 1px;
+  margin: 0 auto 24px;
+  background: linear-gradient(90deg, transparent, rgba(185,148,79,.72), transparent);
+}
+
+.despedida-final {
+  max-width: 680px;
+  margin-inline: auto;
+  text-wrap: balance;
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  line-height: 1.45;
+}
+
+.despedida-secundaria {
+  margin: 10px 0 18px;
+  color: #806b43;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  font-style: italic;
+}
+
+/* Evita animaciones hover permanentes en pantallas táctiles */
+@media (hover: hover) and (pointer: fine) {
+  .boton-ubicacion:hover,
+  .boton-whatsapp:hover,
+  .boton-calendario:hover,
+  .boton-inicio:hover {
+    box-shadow: 0 14px 30px rgba(63,70,59,.16);
+  }
+}
+
+@media (max-width: 600px) {
+  .portada-subtitulo { letter-spacing: .34em; }
+  .portada-fecha { letter-spacing: .08em; }
+  .hoja-6-cierre { padding-inline: 4px; }
+  .despedida-final { font-size: 1.18rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .evento-icono,
+  .padrinos-adorno { animation: none !important; }
+}
+
+/* Fotografías finales — hojas 3 y 6 */
+.marco-historia picture,
+.marco-final picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.marco-historia img,
+.marco-final img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hoja 3: conserva a la pareja completa y centra el encuadre. */
+.marco-historia img {
+    object-position: center 43%;
+}
+
+.foto-final {
+    width: min(92%, 650px);
+    margin: 0.4rem auto 1.35rem;
+}
+
+.marco-final {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 2px solid rgba(184, 139, 48, 0.72);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow:
+        0 16px 34px rgba(59, 44, 22, 0.18),
+        0 0 0 5px rgba(255, 255, 255, 0.46);
+}
+
+.marco-final::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    pointer-events: none;
+    border: 1px solid rgba(255, 244, 208, 0.72);
+    border-radius: 17px;
+}
+
+.marco-final img {
+    object-position: center 48%;
+    transition: transform 900ms ease;
+}
+
+.marco-final:hover img {
+    transform: scale(1.025);
+}
+
+@media (max-width: 640px) {
+    .foto-final {
+        width: min(94%, 520px);
+        margin-bottom: 1rem;
+    }
+
+    .marco-final {
+        aspect-ratio: 4 / 3;
+        border-radius: 18px;
+    }
+
+    .marco-final::after {
+        border-radius: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marco-final img {
+        transition: none;
+    }
+
+    .marco-final:hover img {
+        transform: none;
+    }
+}

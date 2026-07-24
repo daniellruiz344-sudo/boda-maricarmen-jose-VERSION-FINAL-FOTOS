@@ -1,0 +1,329 @@
+ /* ==================================================
+   PÉTALOS Y DESTELLOS
+   Invitación Maricarmen & José Armando
+================================================== */
+
+/* Contenedores de efectos */
+.petalos,
+.destellos {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.destellos {
+    z-index: 3;
+}
+
+.petalos {
+    z-index: 4;
+}
+
+/* =========================
+   PÉTALOS
+========================= */
+
+.petalo {
+    position: absolute;
+    top: -12%;
+    width: var(--tamano, 18px);
+    height: calc(var(--tamano, 18px) * 0.72);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255, 255, 255, 0.95),
+            rgba(251, 218, 225, 0.92) 45%,
+            rgba(211, 143, 157, 0.88) 100%
+        );
+
+    border-radius: 65% 15% 65% 20%;
+    opacity: var(--opacidad, 0.85);
+
+    filter:
+        drop-shadow(0 2px 3px rgba(0, 0, 0, 0.18))
+        blur(var(--desenfoque, 0));
+
+    transform-origin: center;
+
+    animation:
+        caerPetalo var(--duracion, 10s) linear infinite,
+        balancearPetalo var(--balanceo, 3s) ease-in-out infinite alternate;
+
+    animation-delay: var(--retraso, 0s);
+}
+
+/* Variación visual */
+.petalo:nth-child(3n) {
+    border-radius: 20% 70% 25% 65%;
+}
+
+.petalo:nth-child(4n) {
+    background:
+        radial-gradient(
+            circle at 40% 30%,
+            rgba(255, 250, 245, 0.95),
+            rgba(246, 210, 214, 0.92) 50%,
+            rgba(190, 122, 137, 0.85) 100%
+        );
+}
+
+.petalo:nth-child(5n) {
+    opacity: 0.65;
+}
+
+/* Caída principal */
+@keyframes caerPetalo {
+    0% {
+        top: -12%;
+        transform:
+            translateX(0)
+            rotate(0deg)
+            rotateY(0deg);
+    }
+
+    25% {
+        transform:
+            translateX(35px)
+            rotate(90deg)
+            rotateY(80deg);
+    }
+
+    50% {
+        transform:
+            translateX(-20px)
+            rotate(180deg)
+            rotateY(160deg);
+    }
+
+    75% {
+        transform:
+            translateX(45px)
+            rotate(270deg)
+            rotateY(240deg);
+    }
+
+    100% {
+        top: 112%;
+        transform:
+            translateX(-30px)
+            rotate(360deg)
+            rotateY(360deg);
+    }
+}
+
+/* Balanceo lateral */
+@keyframes balancearPetalo {
+    0% {
+        margin-left: -18px;
+    }
+
+    100% {
+        margin-left: 18px;
+    }
+}
+
+/* =========================
+   DESTELLOS DORADOS
+========================= */
+
+.destello {
+    position: absolute;
+    width: var(--tamano-destello, 4px);
+    height: var(--tamano-destello, 4px);
+
+    background: #ffe8a8;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 5px rgba(255, 231, 160, 0.95),
+        0 0 12px rgba(220, 174, 67, 0.85),
+        0 0 22px rgba(220, 174, 67, 0.45);
+
+    opacity: 0;
+
+    animation:
+        encenderDestello var(--duracion-destello, 4s)
+        ease-in-out infinite;
+
+    animation-delay: var(--retraso-destello, 0s);
+}
+
+/* Estrella de cuatro puntas */
+.destello::before,
+.destello::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background: rgba(255, 238, 180, 0.85);
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.destello::before {
+    width: 1px;
+    height: calc(var(--tamano-destello, 4px) * 4);
+}
+
+.destello::after {
+    width: calc(var(--tamano-destello, 4px) * 4);
+    height: 1px;
+}
+
+@keyframes encenderDestello {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.3) rotate(0deg);
+    }
+
+    30% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(45deg);
+    }
+
+    70% {
+        opacity: 0.35;
+    }
+}
+
+/* En pantallas pequeñas usamos menos efectos visuales */
+@media (max-width: 600px) {
+    .petalo:nth-child(n + 15),
+    .destello:nth-child(n + 18) {
+        display: none;
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .petalo,
+    .destello {
+        animation: none !important;
+        display: none;
+    }
+}
+/* ==================================================
+   ACABADO PREMIUM: PÉTALOS MÁS NATURALES
+================================================== */
+
+.petalo {
+    position: fixed;
+    top: -12vh;
+    pointer-events: none;
+    z-index: 20;
+
+    width: 13px;
+    height: 18px;
+
+    background:
+        radial-gradient(
+            ellipse at 35% 30%,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(243, 202, 207, 0.9) 38%,
+            rgba(214, 154, 164, 0.72) 100%
+        );
+
+    border-radius: 70% 30% 65% 35%;
+    box-shadow:
+        0 2px 5px rgba(117, 76, 81, 0.12),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.65);
+
+    opacity: 0.78;
+
+    animation-name: caidaPetaloPremium;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    transform-origin: center;
+}
+
+/* Variaciones de tamaño y transparencia */
+
+.petalo:nth-child(3n) {
+    width: 9px;
+    height: 13px;
+    opacity: 0.55;
+    filter: blur(0.25px);
+}
+
+.petalo:nth-child(4n) {
+    width: 16px;
+    height: 21px;
+    opacity: 0.68;
+}
+
+.petalo:nth-child(5n) {
+    width: 11px;
+    height: 16px;
+    border-radius: 35% 65% 40% 60%;
+}
+
+.petalo:nth-child(7n) {
+    opacity: 0.42;
+    filter: blur(0.6px);
+}
+
+/* Movimiento de caída con balanceo */
+
+@keyframes caidaPetaloPremium {
+    0% {
+        transform:
+            translate3d(0, -12vh, 0)
+            rotate(0deg)
+            rotateY(0deg);
+    }
+
+    25% {
+        transform:
+            translate3d(35px, 22vh, 0)
+            rotate(95deg)
+            rotateY(75deg);
+    }
+
+    50% {
+        transform:
+            translate3d(-25px, 50vh, 0)
+            rotate(190deg)
+            rotateY(145deg);
+    }
+
+    75% {
+        transform:
+            translate3d(45px, 78vh, 0)
+            rotate(285deg)
+            rotateY(220deg);
+    }
+
+    100% {
+        transform:
+            translate3d(-15px, 115vh, 0)
+            rotate(380deg)
+            rotateY(300deg);
+    }
+}
+
+/* Menos pétalos visualmente invasivos en celular */
+
+@media (max-width: 600px) {
+    .petalo {
+        opacity: 0.58;
+        transform: scale(0.85);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .petalo {
+        display: none;
+    }
+}
